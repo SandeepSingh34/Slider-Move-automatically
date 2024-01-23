@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>google</title>
+<style>
+    @keyframes sandeep{
+        from{
+            transition:transform;
+            transition:0.1ms;
+            transform: rotateX(232deg);
+        }
+
+    }
+
+    body{
+        background-color:black;
+        color:white;
+
+    }
+    #heads{
+        cursor: pointer;
+        position:absolute;
+        top:80px;
+        left:10px;
+    }
+    #next{
+        cursor: pointer;
+        position:absolute;
+        top:80px;
+        left:390px;
+    }
+
+   
+    
+        
+        
+
+
+</style>
+</head>
+<body>
+ <h3 class="fa fa-backward" id="heads" onclick="fun(-1)"></h3>
+ <h3 class="fa fa-forward" id="next" onclick="fun(1)"></h3>
+ <img  width="400px" height="200px" id="imgs">
+</body>
+<script>
+    
+ let a=document.getElementById("heads");
+ let next=document.getElementById("next");
+ let i=document.getElementById("imgs");
+ //by default set image
+ let t=1;
+ let m="image"+t+".jpg";
+i.setAttribute("src",m);
+//initial click image 
+let e=2;
+//handle the event 
+ function fun(n)
+ {
+   if(n>=1){
+    
+    if(e>=3)
+    {  
+        let j=3;
+        let m="image"+j+".jpg";  
+        i.setAttribute("src",m);
+        console.log(m);
+    }
+
+    else
+    {
+   console.log(n);
+   let m="image"+e+".jpg";
+   console.log(m);
+   e++;
+   i.setAttribute("src",m);
+
+    }
+    
+   }
+  
+    else
+    {
+        if(e<=1)
+        {
+            let t=1;
+            let m="image"+t+".jpg";
+            i.setAttribute("src",m);
+        }
+        else{
+         e--;
+        console.log(n);
+        let m="image"+e+".jpg";
+        console.log(m);
+        
+        i.setAttribute("src",m);
+        }
+}
+   
+}
+//  a.addEventListener("click",function(){fun(1);});
+
+
+
+let p=1;
+let cl=setInterval(()=>{
+    if(p>=3)
+        {
+            p=1;
+        }
+        let m="image"+p+".jpg";
+        i.setAttribute("src",m)
+        p++;
+       
+},3000);
+
+   
+
+
+
+
+
+
+</script>
+</html>
